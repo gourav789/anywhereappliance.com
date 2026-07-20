@@ -1034,6 +1034,21 @@ a:hover { color: var(--accent-blue-light); }
   font-size: 1.05rem;
   line-height: 1.8;
   color: var(--text-secondary);
+  min-width: 0;            /* allow grid item to shrink below content width */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Keep wide tables/figures from stretching the whole page (mobile fix) */
+.post-content figure {
+  max-width: 100%;
+}
+
+.post-content figure.wp-block-table,
+.post-content .wp-block-table {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
 }
 
 .post-content > * {
